@@ -4,7 +4,7 @@ import { fetchBook, fetchBooks } from "@/lib/github";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, BookOpen } from "lucide-react";
 import TableOfContents from "./_components/table-of-contents";
-import { checkAccessAndRedirect } from "@/lib/supabase/utils";
+// import { checkAccessAndRedirect } from "@/lib/supabase/utils";
 
 export async function generateStaticParams() {
   // すべての本を取得
@@ -38,9 +38,9 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
     notFound();
   }
 
-  if (book.isPaid) {
-    await checkAccessAndRedirect(book.id, "book");
-  }
+  // if (book.isPaid) {
+  //   await checkAccessAndRedirect(book.id, "book");
+  // }
 
   // データ一覧から、現在のチャプターを探す
   const chapterIndex = book.chapters.findIndex(

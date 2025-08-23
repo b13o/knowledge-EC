@@ -2,7 +2,7 @@ import Link from "next/link";
 import { fetchArticles } from "@/lib/github";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { checkAccessAndRedirect } from "@/lib/supabase/utils";
+// import { checkAccessAndRedirect } from "@/lib/supabase/utils";
 
 // ビルド時に動的なページを生成
 export async function generateStaticParams() {
@@ -32,9 +32,9 @@ export default async function PostDetailPage({ params }: PostDetailPageProps) {
     );
   }
 
-  if (post.isPaid) {
-    await checkAccessAndRedirect(post.id, "article");
-  }
+  // if (post.isPaid) {
+  //   await checkAccessAndRedirect(post.id, "article");
+  // }
 
   return (
     <main className="min-h-screen bg-white">

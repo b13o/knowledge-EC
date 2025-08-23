@@ -1,4 +1,4 @@
-import { signIn } from "../../auth";
+// import { signIn } from "../../auth";
 import { Button } from "./ui/button";
 
 interface SignInButtonProps {
@@ -9,15 +9,15 @@ interface SignInButtonProps {
 
 export default function SignInButton(props: SignInButtonProps) {
   return (
-    <form
-      action={async () => {
-        "use server";
-        await signIn("github");
-      }}
-    >
-      <Button size={props.size} className={props.className} type="submit">
-        {props.children || "Login"}
-      </Button>
-    </form>
+    // <form
+    //   action={async () => {
+    //     "use server";
+    //     await signIn("github");
+    //   }}
+    // >
+    <Button size={props.size} className={props.className}>
+      {props.children || "Login"}
+    </Button>
+    // </form>
   );
 }
